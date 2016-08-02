@@ -1,0 +1,14 @@
+add this >> GMapOverlay markersOverlay = new GMapOverlay("markers");
+into >> initViewOnly()
+
+and
+
+add:
+double lat = Convert.ToDouble(textBox1.Text);
+double lon = Convert.ToDouble(textBox2.Text);
+markersOverlay.Markers.Clear();
+GMarkerGoogle marker = new GMarkerGoogle(new PointLatLn(lat,lon),GMarkerGoogleType.red);
+markersOverlay.Markers.Add(marker);
+map.Overlays.Add(markersOverlay);
+
+afert >> map.Position = new GMap.NET.PointLatLng(coords.Latitude, coords.Longitude); 
